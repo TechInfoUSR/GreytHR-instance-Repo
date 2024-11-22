@@ -148,18 +148,26 @@ public class CustomReportListener implements IReporter{
             
 
 //            MultiPartEmail email = new MultiPartEmail();
+//            HtmlEmail email = new HtmlEmail();
+//            email.setHostName("mail.usrinfotech.com");
+//            email.setSmtpPort(587);
+//            email.setAuthenticator(new DefaultAuthenticator("noreply@usrinfotech.com", "]#hoPoQxTqYr"));
+//            email.setSSLOnConnect(true);
+//            email.setFrom("noreply@usrinfotech.com");
+//            email.setSubject("GreytHR Instance Test Report");
+            
             HtmlEmail email = new HtmlEmail();
-            email.setHostName("mail.usrinfotech.com");
+            email.setHostName("smtp.gmail.com");
             email.setSmtpPort(587);
-            email.setAuthenticator(new DefaultAuthenticator("noreply@usrinfotech.com", "]#hoPoQxTqYr"));
+            email.setAuthenticator(new DefaultAuthenticator("skipmanagergobetter@gmail.com", "wocx rawr lldu sfws"));
             email.setSSLOnConnect(true);
-            email.setFrom("noreply@usrinfotech.com");
-            email.setSubject("GreytHR Instance Test Report");
+            email.setFrom("skipmanagergobetter@gmail.com");   
+            email.setSubject("Greyt HR Instance Test Report");
             email.setHtmlMsg("Test Report: "+reportContent.toString());
 //            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
 
 //            String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"};
-            String[] recipients = {"Hanumanth@usrinfotech.com","ravi@okrstars.co"};
+            String[] recipients = {"Hanumanth@usrinfotech.com","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech"};
 
             for (String recipient : recipients) {
                 email.addTo(recipient);
