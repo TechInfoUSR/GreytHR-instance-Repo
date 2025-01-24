@@ -101,9 +101,9 @@ public class emp_assesment_Submission {
     		  String goal_comments1 = "goal_comments1";    	
     		  driver.findElement(By.id(goal_comments1)).sendKeys(Empcmt);
 
-    		  driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[3]")).click();
+    		  driver.findElement(By.xpath("//*[@id=\"nggDiv\"]/div[16]/div/div[2]/form[1]/div[4]/div[1]/button[2]")).click();
  
-    		  driver.findElement(By.xpath("(//button[contains(text(),'Close')])[1]")).click();
+    		  driver.findElement(By.xpath("//*[@id=\"nggDiv\"]/div[16]/div/div[2]/form[1]/div[4]/div[1]/button[1]")).click();
     		  Thread.sleep(1000);
     	  }
     	  public String isSelfsub() throws InterruptedException {
