@@ -1,13 +1,13 @@
 package normalFlowTest;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -20,13 +20,8 @@ import NormalFlowForEmployee.addGoalPlan;
 import NormalFlowForEmployee.emp_assesment_Submission;
 import NormalFlowForEmployee.initiatePMSCycle;
 import NormalFlowForEmployee.manager_AddGoals;
-
 import Utils.EmailUtil;
 import Utils.ScreenshotUtil;
-
-
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 
 //@Listeners(normalFlowTest.TestFailureListener.class)
 

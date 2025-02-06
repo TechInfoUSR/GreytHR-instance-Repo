@@ -1,5 +1,8 @@
 package NormalFlowForEmployee;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -47,12 +50,34 @@ public class addGoalPlan {
         Thread.sleep(500);
 
         // Select start date
-        driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
-        selectDate("January 2025", "11");
+//        driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
+//        selectDate("January 2025", "11");
+//
+//        // Select end date
+//        driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
+//        selectDate("January 2026", "11");
+        LocalDate currentDate = LocalDate.now();
+        
+        // Create a formatter for "MMMM yyyy" (e.g., January 2025)
+        DateTimeFormatter monthYearFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+        DateTimeFormatter dayFormatter = DateTimeFormatter.ofPattern("d");
 
+        // Print the current month
+        String formattedDate1 = currentDate.format(monthYearFormatter);
+        String formattedDay = currentDate.format(dayFormatter);
+ 
+        driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
+        
+        selectDate(formattedDate1,formattedDay);
+        
         // Select end date
+        
+        LocalDate thirdMonth = currentDate.plusMonths(3);
+        String Third_Month_Year = thirdMonth.format(monthYearFormatter);
+        String Third_MonthDATE = thirdMonth.format(dayFormatter);
+        
         driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
-        selectDate("January 2026", "11");
+        selectDate(Third_Month_Year, Third_MonthDATE);
         JavascriptExecutor Srollup1 = (JavascriptExecutor) driver;
         Srollup1.executeScript("window.scrollBy(0,800)");
         // Select rating scale
